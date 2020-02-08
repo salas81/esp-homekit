@@ -1,6 +1,5 @@
 set(HOMEKIT_SRCS
   "src/json.c"
-  "src/pairing.c"
   "src/storage.c"
   "src/tlv.c "
   "src/server.c"
@@ -21,7 +20,7 @@ set(COMPONENT_ADD_INCLUDEDIRS
 
 set(COMPONENT_PRIV_INCLUDEDIRS "src")
 set(COMPONENT_SRCEXCLUDE "src/mdnsresponder.c")
-set(COMPONENT_REQUIRES wolfssl cJSON http-parser mdns)
+set(COMPONENT_REQUIRES wolfssl json http-parser mdns spi_flash)
 
 register_component()
 
@@ -61,4 +60,3 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
   -DED25519_SMALL \
   -Wno-error=unused-value"
 )
-
